@@ -1,6 +1,5 @@
 const Notes = function (selector, tuner) {
     this.tuner = tuner
-    this.isAutoMode = true
     this.$root = document.querySelector(selector)
     this.$notesList = this.$root.querySelector('.notes-list')
     this.$frequency = this.$root.querySelector('.frequency')

@@ -7,8 +7,19 @@ const Notes = function (selector, tuner) {
     this.$notesMap = {}
 }
 
+let lastUpdated = 0
+
 Notes.prototype.update = function (note) {
-    this.$frequency.childNodes[0].textContent = parseFloat(
+    const time = new Date().getTime()
+    const delta = 1000
+    const frequency = parseFloat(
         note.frequency
-    ).toFixed(1)
+    ).toFixed(1);
+
+    if (time - delta <= lastUpdated || 50 > frequency || 600 < frequency) {
+        return
+    }
+
+    lastUpdated = time
+    this.$frequency.childNodes[0].textContent = frequency
 }

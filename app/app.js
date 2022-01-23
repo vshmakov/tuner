@@ -1,7 +1,7 @@
 const Application = function () {
     this.initA4()
     this.tuner = new Tuner(this.a4)
-    this.notes = new Notes('.notes', this.tuner)
+    this.notes = new Notes('.notes')
     this.meter = new Meter('.meter')
     this.frequencyBars = new FrequencyBars('.frequency-bars')
     this.update({name: 'A', frequency: this.a4, octave: 4, value: 69, cents: 0})
